@@ -16,7 +16,6 @@
         "Copy-Item -Path \"$dir\\WinDivert-2.2.2-A\\x86\\WinDivert*\" -Destination \"$dir\\\"",
         "Remove-Item -Path \"$dir\\WinDivert-2.2.2-A\" -Recurse"
     ],
-    "#extract_dir": "WinDivert-2.2.2-A\\x86",
     "bin": "geph5-client.exe",
     "checkver": "Github",
     "autoupdate": {
