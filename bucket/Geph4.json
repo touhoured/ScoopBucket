@@ -16,7 +16,7 @@
             "Geph 4 GUI"
         ]
     ],
-	"bin": "geph4-client.exe",
+    "bin": "geph4-client.exe",
     "checkver": {
         "url": "https://f001.backblazeb2.com/file/geph4-dl/geph-releases/metadata.yaml",
         "regex": "windows-stable:[\\s]+?version: ([\\d.]+)"

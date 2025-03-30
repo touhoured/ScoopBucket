@@ -17,7 +17,7 @@
         "Remove-Item -Path \"$dir\\WinDivert-2.2.2-A\" -Recurse"
     ],
     "#extract_dir": "WinDivert-2.2.2-A\\x86",
-	"bin": "geph5-client.exe",
+    "bin": "geph5-client.exe",
     "checkver": "Github",
     "autoupdate": {
         "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v$version/i686-pc-windows-msvc-geph5-client.exe"

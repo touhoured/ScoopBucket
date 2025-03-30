@@ -13,7 +13,7 @@
             "Geph 5 GUI"
         ]
     ],
-	"bin": "gephgui-wry.exe",
+    "bin": "gephgui-wry.exe",
     "checkver": {
         "url": "https://f001.backblazeb2.com/file/geph4-dl/geph-releases/metadata.yaml",
         "regex": "windows-stable:[\\s]+?version: ([\\d.]+)"
