@@ -1,6 +1,6 @@
 {
     "version": "0.2.49",
-    "description": "My personally built geph5-client.exe, because since Geph5, only non-CLI versions of the client (gephgui-wry.exe) are provided.",
+    "description": "Since Geph5 only the non-CLI Client (gephgui-wry.exe) is available, so this is my personal build.",
     "homepage": "https://github.com/touhoured/geph5-autobuild",
     "license": "MPL 2.0",
     "url": [
