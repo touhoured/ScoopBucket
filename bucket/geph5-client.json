@@ -1,6 +1,6 @@
 {
     "version": "0.2.49",
-    "description": "Geph is a modular Internet censorship circumvention system designed specifically to deal with national filtering. ",
+    "description": "My build of geph5-client, is like gephgui-wry.exe (Geph5), but CLI.",
     "homepage": "https://github.com/touhoured/geph5-autobuild",
     "license": "MPL 2.0",
     "url": [
@@ -12,7 +12,6 @@
         "63cb41763bb4b20f600b6de04e991a9c2be73279e317d4d82f237b150c5f3f15"
     ],
     "pre_install": [
-        "Rename-Item -Path \"$dir\\i686-pc-windows-msvc-geph5-client.exe\" -NewName \"$dir\\geph5-client.exe\"",
         "Copy-Item -Path \"$dir\\WinDivert-2.2.2-A\\x86\\WinDivert*\" -Destination \"$dir\\\"",
         "Remove-Item -Path \"$dir\\WinDivert-2.2.2-A\" -Recurse"
     ],
