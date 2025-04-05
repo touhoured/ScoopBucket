@@ -1,14 +1,14 @@
 {
-    "version": "0.2.49",
+    "version": "0.2.52",
     "description": "Since Geph5 only the non-CLI Client (gephgui-wry.exe) is available, so this is my personal build.",
     "homepage": "https://github.com/touhoured/geph5-autobuild",
     "license": "MPL 2.0",
     "url": [
-        "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.2.49/geph5-client-i686-pc-windows-msvc-v0.2.49.zip",
+        "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.2.52/geph5-client-i686-pc-windows-msvc-v0.2.52.zip",
         "https://github.com/basil00/WinDivert/releases/download/v2.2.2/WinDivert-2.2.2-A.zip"
     ],
     "hash": [
-        "dd14e81b418766315372fd87d239d9d2d6edf2f589b4012a2b9b89de93cc21fe",
+        "577f91afcd7eca6c4087ae3a4c92a78332911afef4f946f6e04b792e5fac25ef",
         "63cb41763bb4b20f600b6de04e991a9c2be73279e317d4d82f237b150c5f3f15"
     ],
     "pre_install": [
