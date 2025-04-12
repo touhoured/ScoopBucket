@@ -5,7 +5,7 @@
     "license": "BSD-3-Clause",
     "notes": [
         "Tailscale need daemon, run:",
-        "tailscaled.exe -statedir \"$dir\\config\""
+        "tailscaled.exe"
     ],
     "architecture": {
         "64bit": {
@@ -32,11 +32,7 @@
     "bin": [
         "tailscale.exe",
         "tailscale-ipn.exe",
-        [
-            "tailscaled.exe",
-            "tailscaled",
-            "-statedir \"$dir\\config\""
-        ]
+        "tailscaled.exe"
     ],
     "persist": "config",
     "shortcuts": [
