@@ -4,8 +4,9 @@
     "homepage": "https://tailscale.com",
     "license": "BSD-3-Clause",
     "notes": [
-        "Tailscale need daemon, run:",
-        "tailscaled.exe"
+        "It seems Tailscale binds to the system ID,",
+        "so using -statedir to change the directory is pointless.",
+        "Manually start the daemon using tailscaled.exe"
     ],
     "architecture": {
         "64bit": {
@@ -34,7 +35,6 @@
         "tailscale-ipn.exe",
         "tailscaled.exe"
     ],
-    "persist": "config",
     "shortcuts": [
         [
             "tailscale-ipn.exe",
