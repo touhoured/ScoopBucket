@@ -15,6 +15,10 @@
         "32bit": {
             "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.15.10/Sandboxie-Plus-x86-v1.15.10.exe#/setup.exe",
             "hash": "b6b7a301802b3fc4b501e5e8466d12917d10d485fc24c3dbf62fb6f490217458"
+        },
+        "arm64": {
+            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.15.10/Sandboxie-Plus-ARM64-v1.15.10.exe#/setup.exe",
+            "hash": "e95054455b121dbea17f7f13ee461cb433758b0f959f8fbc2f4605492abd060f"
         }
     },
     "installer": {
@@ -71,7 +75,13 @@
             },
             "32bit": {
                 "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v$version/Sandboxie-Plus-x86-v$version.exe#/setup.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v$version/Sandboxie-Plus-ARM64-v$version.exe#/setup.exe"
             }
+        },
+        "hash": {
+            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v$version/sha256-checksums.txt"
         }
     }
 }
