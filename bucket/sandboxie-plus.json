@@ -5,7 +5,7 @@
     "homepage": "https://sandboxie-plus.com/",
     "license": "GPL-3.0-or-later",
     "notes": [
-        "If the uninstall/update prompts that afa is still running, click",
+        "If the uninstall/update prompts SbieDrv/SbieSvc is still running, click",
         "Sandbox > Maintenance > Uninstall All"
     ],
     "architecture": {
