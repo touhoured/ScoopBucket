@@ -1,12 +1,13 @@
 {
-    "##": [
-        "For command-line usage, see: https://sandboxie-plus.com/sandboxie/startcommandline/",
-        "The installer is made with InnoSetup, but the app will not work without installing the drivers (via the installer)"
-    ],
+    "##": "For command-line usage, see: https://sandboxie-plus.com/sandboxie/startcommandline/",
     "version": "1.15.10",
     "description": "Sandbox isolation software (plus variant)",
     "homepage": "https://sandboxie-plus.com/",
     "license": "GPL-3.0-or-later",
+    "notes": [
+        "If the uninstall/update prompts that afa is still running, click",
+        "Sandbox > Maintenance > Uninstall All"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.15.10/Sandboxie-Plus-x64-v1.15.10.exe#/setup.exe",
@@ -21,27 +22,26 @@
             "hash": "e95054455b121dbea17f7f13ee461cb433758b0f959f8fbc2f4605492abd060f"
         }
     },
-    "installer": {
-        "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to install\"; break }",
-            "Start-Process \"$dir\\setup.exe\" -ArgumentList @('/verysilent', \"/dir=`\"$dir`\"\") -Wait -Verb RunAs | Out-Null",
-            "Remove-Item \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Sandboxie-Plus\" -Recurse",
-            "Remove-Item \"$([Environment]::GetFolderPath('Desktop'))\\Sandboxie-Plus.lnk\"",
-            "Remove-Item \"$dir\\setup.exe\""
-        ]
-    },
-    "pre_uninstall": "Stop-Process -Name 'SbieSvc' -Force -ErrorAction SilentlyContinue",
-    "uninstaller": {
-        "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to uninstall\"; break }",
-            "Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList '/verysilent' -RunAs | Out-Null"
-        ]
-    },
+    "innosetup": true,
+    "##pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to uninstall\"; break }",
+        "Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieSvc') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieDrv') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieSvc') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieDrv') -Wait -Verb RunAs"
+    ],
     "bin": [
         [
             "start.exe",
             "sandboxie-start"
         ]
+    ],
+    "persist": [
+        "Sandbox",
+        "Sandboxie.ini",
+        "Sandboxie-Plus.ini"
     ],
     "shortcuts": [
         [
