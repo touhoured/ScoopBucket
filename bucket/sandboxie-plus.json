@@ -22,9 +22,9 @@
         }
     },
     "innosetup": true,
-    "##": [
+    "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to uninstall\"; break }",
-        "Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
+        "# Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
         "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
         "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieSvc') -Wait -Verb RunAs",
         "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieDrv') -Wait -Verb RunAs",
