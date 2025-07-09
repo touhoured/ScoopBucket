@@ -1,5 +1,5 @@
 {
-    "version": "1.15.12",
+    "version": "1.16.1",
     "description": "Sandbox isolation software (plus variant)",
     "homepage": "https://sandboxie-plus.com/",
     "license": "GPL-3.0-or-later",
@@ -9,12 +9,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.15.12/Sandboxie-Plus-x64-v1.15.12.exe#/setup.exe",
-            "hash": "06c801528b8e0e456495019abc77b43a7367d29da88c227cbba755c1946f320c"
+            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.16.1/Sandboxie-Plus-x64-v1.16.1.exe#/setup.exe",
+            "hash": "5a53a412961ee6f3b3a80035be1eee3c9ea3cd5aaae8f8d5e2d34cab4840f90d"
         },
         "arm64": {
-            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.15.12/Sandboxie-Plus-ARM64-v1.15.12.exe#/setup.exe",
-            "hash": "5ee96979809a09b5b19f9e9c20c732463a0cb26e40b0fbf745792915e8ae55e8"
+            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v1.16.1/Sandboxie-Plus-ARM64-v1.16.1.exe#/setup.exe",
+            "hash": "422fee57262e35a94e84d4d0c558dc8b4e0ea4cb42c557cce187d0e48f124422"
         }
     },
     "innosetup": true,
