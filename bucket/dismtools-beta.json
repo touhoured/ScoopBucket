@@ -26,6 +26,6 @@
         "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/CodingWonders/DISMTools/releases/download/v$version_stable/DISMTools.zip"
+        "url": "https://github.com/CodingWonders/DISMTools/releases/download/v$version/DISMTools.zip"
     }
 }
