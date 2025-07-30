@@ -1,5 +1,5 @@
 {
-    "version": "138.0.7204.169",
+    "version": "138.0.7204.184",
     "description": "Portable with Chrome++.",
     "homepage": "https://www.google.com/chrome/",
     "license": {
@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://dl.google.com/release2/chrome/ac2j67h3odyq3s2qkw2j5lhcieia_138.0.7204.169/138.0.7204.169_chrome_installer_uncompressed.exe#/dl.7z",
+                "https://dl.google.com/release2/chrome/h5cbgnnhhw2lr35rflchltnqcm_138.0.7204.184/138.0.7204.184_chrome_installer_uncompressed.exe#/dl.7z",
                 "https://github.com/Bush2021/chrome_plus/releases/download/1.11.1/Chrome++_v1.11.1_x86_x64_arm64.7z"
             ],
             "hash": [
-                "f650792667f5a2f5c482d8514914a7fc12d8baf4d265339d635738dd9a91baff",
+                "c7593049bae70e811032163f5f4c90e7782c495c06bdef1bdd2b6ae61b300ac5",
                 "7c09fee1d3e3a3fe8ccd44e1dda45b4145bd6887f12f343757344017cbd20575"
             ],
             "extract_dir": [
@@ -23,11 +23,11 @@
         },
         "32bit": {
             "url": [
-                "https://dl.google.com/release2/chrome/ek3q6pvih7wdijttbn22hfkhsq_138.0.7204.169/138.0.7204.169_chrome_installer_uncompressed.exe#/dl.7z",
+                "https://dl.google.com/release2/chrome/adpanowgeooql6x3z5aebmcvhlha_138.0.7204.184/138.0.7204.184_chrome_installer_uncompressed.exe#/dl.7z",
                 "https://github.com/Bush2021/chrome_plus/releases/download/1.11.1/Chrome++_v1.11.1_x86_x64_arm64.7z"
             ],
             "hash": [
-                "9ca54578d79e3e7c1efaa9edd4a08b6051b1950466ce532bda192acb5686ed5b",
+                "8b8a21d87b0070efe3490fec82da5731f2fa5562265867bde8a82a25ca00d7b9",
                 "7c09fee1d3e3a3fe8ccd44e1dda45b4145bd6887f12f343757344017cbd20575"
             ],
             "extract_dir": [
