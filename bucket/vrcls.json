@@ -12,7 +12,7 @@
     "bin": "VRCLS.exe",
     "checkver": {
         "github": "https://github.com/VoiceLinkVR/VRCLS",
-        "regex": "v([\\d.-]+)"
+        "regex": "VRCLS-windows-v([\\d.]+[-\\w]*)\\.exe"
     },
     "innosetup": true,
     "autoupdate": {
