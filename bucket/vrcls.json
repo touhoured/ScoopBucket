@@ -15,7 +15,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://cloudflarestorage.boyqiu001.top/VRCLS-windows-$version.exe"
+                "url": "https://cloudflarestorage.boyqiu001.top/VRCLS-windows-v$version.exe"
             }
         }
     }
