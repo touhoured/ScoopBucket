@@ -10,7 +10,10 @@
         }
     },
     "bin": "VRCLS.exe",
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/VoiceLinkVR/VRCLS",
+        "regex": "v([\\d.-]+)"
+    },
     "innosetup": true,
     "autoupdate": {
         "architecture": {
