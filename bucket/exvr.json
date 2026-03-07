@@ -11,6 +11,10 @@
             "ExVR"
         ]
     ],
+    "pre_install": [
+        "Move-Item -Path \"$dir\\ExVR_$version\\*\" -Destination \"$dir\"",
+        "Remove-Item -Path \"$dir\\ExVR_$version\" -Force -Recurse"
+    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/xiaofeiyu0723/ExVR/releases/download/$version/ExVR_$version.zip"
