@@ -2,7 +2,7 @@
     "version": "0.2.93",
     "description": "Since Geph5 only the non-CLI Client (gephgui-wry.exe) is available, so this is my personal build.",
     "homepage": "https://github.com/touhoured/geph5-autobuild",
-    "license": "MPL 2.0",
+    "license": "MPL-2.0",
     "architecture": {
         "32bit": {
             "url": [
