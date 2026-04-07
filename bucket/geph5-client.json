@@ -17,6 +17,20 @@
                 "Copy-Item -Path \"$dir\\WinDivert-2.2.2-A\\x86\\WinDivert*\" -Destination \"$dir\\\"",
                 "Remove-Item -Path \"$dir\\WinDivert-2.2.2-A\" -Recurse"
             ]
+        },
+        "64bit": {
+            "url": [
+                "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.2.94/geph5-client-x86_64-pc-windows-msvc-v0.2.94.zip",
+                "https://github.com/basil00/WinDivert/releases/download/v2.2.2/WinDivert-2.2.2-A.zip"
+            ],
+            "hash": [
+                "b1c5e06e26fb8e435f0ecf3fb7112122bc286fc210f35611a11e281a87f52811",
+                "63cb41763bb4b20f600b6de04e991a9c2be73279e317d4d82f237b150c5f3f15"
+            ],
+            "pre_install": [
+                "Copy-Item -Path \"$dir\\WinDivert-2.2.2-A\\x64\\WinDivert*\" -Destination \"$dir\\\"",
+                "Remove-Item -Path \"$dir\\WinDivert-2.2.2-A\" -Recurse"
+            ]
         }
     },
     "bin": "geph5-client.exe",
@@ -28,6 +42,9 @@
         "architecture": {
             "32bit": {
                 "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v$version/geph5-client-i686-pc-windows-msvc-v$version.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v$version/geph5-client-x86_64-pc-windows-msvc-v$version.zip"
             }
         }
     }
