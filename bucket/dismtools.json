@@ -26,6 +26,10 @@
         "regex": "/tag/v([\\d.]+[-\\w]*)"
     },
     "autoupdate": {
-        "url": "https://github.com/CodingWonders/DISMTools/releases/download/v$version/DISMTools.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/CodingWonders/DISMTools/releases/download/v$version/DISMTools.zip"
+            }
+        }
     }
 }
