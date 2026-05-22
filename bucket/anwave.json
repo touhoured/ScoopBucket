@@ -1,12 +1,12 @@
 {
-    "version": "7.1.45.0",
+    "version": "7.13.2.0",
     "description": "AnWave Personal Development Project - Manage and customize AMD Radeon drivers and more",
     "homepage": "https://github.com/SimonMacer/AnWave",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SimonMacer/AnWave/releases/download/AnWave-v7.1.45/AnWave-2024-7.1.45.0-Windows-x64-Stable-Release.rar",
-            "hash": "b62b04ef43e2df29ceeb0bc1b25a7b227241d2412232fd9e6a5a9f144a3de2e8"
+            "url": "https://github.com/SimonMacer/AnWave/releases/download/AnWave-v7.13.2/AnWave-2024-7.13.2.0-Windows-x64-Stable-Release.rar",
+            "hash": "535b3065ae5b10de20ef346c39c69711184e4ee72a199ff593f93355f3179aa3"
         }
     },
     "checkver": {
