@@ -1,0 +1,48 @@
+{
+    "version": "1",
+    "description": "A Windows and Office activator using HWID / KMS38 / Online KMS activation methods, with a focus on open-source code and fewer antivirus detections.",
+    "homepage": "https://massgrave.dev/",
+    "license": "GPL-3.0-or-later",
+    "url": "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/694976cd35c9601ce280d7b8fc920f257c97b627/MAS/All-In-One-Version-KL/MAS_AIO.cmd",
+    "hash": "d94b1abcba24d26c5fbe114a15b53a558684d74a1accff79bbb2407be7102a89",
+    "bin": [
+        [
+            "MAS_AIO.cmd",
+            "MAS"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "MAS_AIO.cmd",
+            "MAS"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            "$owner = 'massgravel'",
+            "$repo = 'Microsoft-Activation-Scripts'",
+            "$path = 'MAS/All-In-One-Version-KL/MAS_AIO.cmd'",
+            "",
+            "$commit = Invoke-RestMethod \"https://api.github.com/repos/$owner/$repo/commits?path=$path&per_page=1\"",
+            "$sha = $commit[0].sha",
+            "$short = $sha.Substring(0,7)",
+            "",
+            "$release = Invoke-RestMethod \"https://api.github.com/repos/$owner/$repo/releases/latest\"",
+            "$tag = $release.tag_name",
+            "",
+            "$compare = Invoke-RestMethod \"https://api.github.com/repos/$owner/$repo/compare/$tag...$sha\"",
+            "$ahead = $compare.ahead_by",
+            "",
+            "if ($ahead -eq 0) {",
+            "    Write-Output $tag",
+            "} else {",
+            "    Write-Output \"$tag-$ahead-g$short\"",
+            "}",
+            "Write-Output $sha"
+        ],
+        "regex": "(?<version>\\S+)\\s+(?<sha>[a-f0-9]{40})"
+    },
+    "autoupdate": {
+        "url": "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/$matchSha/MAS/All-In-One-Version-KL/MAS_AIO.cmd"
+    }
+}
