@@ -1,8 +1,8 @@
 {
-    "version": "1",
+    "version": "2025-10-30",
     "homepage": "https://forums.guru3d.com/threads/windows-power-plan-settings-explorer-utility.416058/",
     "license": "Freeware",
-    "url": "http://1.1.1.1/1",
+    "url": "http://1.1.1.1/2025-10-30",
     "pre_install": [
         "$html = Invoke-WebRequest -UseBasicParsing \"https://www.mediafire.com/file/wt37sbsejk7iepm/PowerSettingsExplorer.zip/file\"",
         "$dl_url = ($html.Links | Where-Object id -eq \"downloadButton\").href",
