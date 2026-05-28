@@ -51,8 +51,7 @@
         ]
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases",
-        "regex": "/releases/tag/v([\\d.]+)"
+        "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases"
     },
     "autoupdate": {
         "architecture": {
