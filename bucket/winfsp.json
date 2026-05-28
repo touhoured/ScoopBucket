@@ -9,10 +9,11 @@
         "script": "Invoke-ExternalCommand msiexec -RunAs -ArgumentList @('/i', \"$dir\\setup.msi_\", 'ADDLOCAL=F.Developer', '/qn')"
     },
     "checkver": {
-        "github": "https://github.com/winfsp/winfsp",
-        "regex": "winfsp-(\\d+\\.\\d+\\.\\d+)\\.msi"
+        "github": "https://api.github.com/repos/winfsp/winfsp/releases",
+        "jsonpath": "$..browser_download_url",
+        "regex": "download/v(?<version>[\\w.]+)/winfsp-(?<build>[\\d.]+)\\.msi"
     },
     "autoupdate": {
-        "url": "https://github.com/winfsp/winfsp/releases/download/v$majorVersion.$minorVersion/winfsp-$version.msi#/setup.msi_"
+        "url": "https://github.com/winfsp/winfsp/releases/download/v$version/winfsp-$matchBuild.msi#/setup.msi_"
     }
 }
