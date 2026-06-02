@@ -1,8 +1,11 @@
 {
     "version": "1.17.6",
-    "description": "Sandbox isolation software (plus variant)",
-    "homepage": "https://sandboxie-plus.com/",
-    "license": "GPL-3.0-or-later",
+    "description": "An enhanced edition of Sandboxie that provides sandbox-based application isolation on Windows with additional features and a modern interface.",
+    "homepage": "https://sandboxie-plus.com",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/sandboxie-plus/Sandboxie/blob/HEAD/LICENSE.Plus"
+    },
     "notes": [
         "If the uninstall/update prompts SbieDrv/SbieSvc is still running, click",
         "Sandbox > Maintenance > Uninstall All"
@@ -19,6 +22,7 @@
     },
     "innosetup": true,
     "bin": [
+        "SandMan.exe",
         [
             "start.exe",
             "sandboxie-start"
@@ -51,8 +55,7 @@
         ]
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases",
-        "jsonpath": "$..tag_name"
+        "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases"
     },
     "autoupdate": {
         "architecture": {
@@ -62,9 +65,6 @@
             "arm64": {
                 "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v$version/Sandboxie-Plus-ARM64-v$version.exe"
             }
-        },
-        "hash": {
-            "url": "https://github.com/sandboxie-plus/Sandboxie/releases/download/v$version/sha256-checksums.txt"
         }
     }
 }
