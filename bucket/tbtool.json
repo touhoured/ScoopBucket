@@ -1,0 +1,38 @@
+{
+    "version": "2026.01.1",
+    "description": "图拉丁吧硬件检测工具箱，是开源、免费、绿色、纯净的硬件检测工具合集.",
+    "homepage": "http://www.tbtool.cn/",
+    "license": "Freeware",
+    "url": "https://apac.tualatin.club/%E5%9B%BE%E5%90%A7%E5%B7%A5%E5%85%B7%E7%AE%B1202601.1%E5%AE%89%E8%A3%85%E5%8C%85.exe",
+    "hash": "255e663a0d45ac2b6b9c018e207afd9cd6b47c702180eebe3fcdb4a006b2bd57",
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/DIR=$dir",
+            "/NORESTART"
+        ]
+    },
+    "post_install": [
+        "Remove-Item \"$([Environment]::GetFolderPath('CommonPrograms'))\\图吧工具箱.lnk\"",
+        "Remove-Item \"$([Environment]::GetFolderPath('CommonDesktopDirectory'))\\图吧工具箱.lnk\""
+    ],
+    "bin": [
+        [
+            "图吧工具箱2026.exe",
+            "tbtool"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "图吧工具箱2026.exe",
+            "图吧工具箱2026"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.tbtool.cn/download/",
+        "regex": "最新版本：([\\w.]+)"
+    },
+    "autoupdate": {
+        "url": "https://apac.tualatin.club/%E5%9B%BE%E5%90%A7%E5%B7%A5%E5%85%B7%E7%AE%B1$cleanVersion%E5%AE%89%E8%A3%85%E5%8C%85.exe"
+    }
+}
