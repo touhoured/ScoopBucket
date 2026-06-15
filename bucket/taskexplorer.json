@@ -6,7 +6,7 @@
     "url": "https://github.com/DavidXanatos/TaskExplorer/releases/download/v1.8.0/TaskExplorer-v1.8.0.exe",
     "hash": "e40af0d5cfd43091e626eda631cbc53d4804db129b602180d05d47be137cf744",
     "suggest": {
-        "Kernel Driver":"systeminformer-nightly"
+        "Kernel Driver": "systeminformer-nightly"
     },
     "innosetup": true,
     "pre_install": [
