@@ -25,6 +25,14 @@
             "Invoke-ExternalCommand pnputil -ArgumentList @('/add-driver', \"$dir\\btrfs.inf\", '/install') -RunAs -ContinueExitCodes @{ 3010 = 'A system reboot is required to finalize the installation.' } | Out-Null"
         ]
     },
+    "uninstaller": {
+        "script": [
+            "if ($cmd -ne 'uninstall') { return }",
+            "Invoke-ExternalCommand pnputil -ArgumentList @('/delete-driver', \"$dir\\btrfs.inf\", '/uninstall') -RunAs | Out-Null",
+            "Invoke-ExternalCommand pnputil -ArgumentList @('/delete-driver', \"$dir\\btrfs-vol.inf\", '/uninstall') -RunAs | Out-Null",
+            "Invoke-ExternalCommand sc -ArgumentList @('delete', 'btrfs') -RunAs | Out-Null"
+        ]
+    },
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/maharmstone/btrfs/releases/download/v$version/btrfs-$version.zip"
