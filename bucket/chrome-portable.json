@@ -24,13 +24,13 @@
     "extract_dir": "Chrome-bin",
     "pre_install": [
         "New-Item -ItemType Directory -Path \"$dir\\App\" -Force | Out-Null",
-        "Move-Item -Path \"$dir\\*\" -Destination \"$dir\\App\\\"",
+        "Move-Item -Path \"$dir\\*\" -Destination \"$dir\\App\\\" -ErrorAction SilentlyContinue",
         "$chromeArch = switch ($architecture) {",
         "    '32bit' { 'x86' }",
         "    '64bit' { 'x64' }",
         "    'arm64' { 'arm64' }",
         "}",
-        "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\$chromeArch\\*\" -Destination \"$dir\" -Recurse"
+        "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\$chromeArch\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
     ],
     "persist": [
         "App\\chrome++.ini",
