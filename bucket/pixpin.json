@@ -1,0 +1,36 @@
+{
+    "version": "3.3.5.7",
+    "description": "A powerful and easy-to-use screenshot and pinning tool to help you improve efficiency",
+    "homepage": "https://pixpinapp.com/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://down.pixpin.cn/PixPin_win_3.3.5.7.zip",
+            "hash": "22eedc554a2e4cd1b1e1cdfc350189c797b2b1322d48066051c87c47848eb31b"
+        }
+    },
+    "extract_dir": "PixPin",
+    "shortcuts": [
+        [
+            "PixPin.exe",
+            "PixPin"
+        ]
+    ],
+    "post_install": "if (!(Test-Path \"$dir\\Config\\config.json\")) { Set-Content -Encoding ASCII -Path \"$dir\\Config\\config.json\" -Value '{\"System.Update.AutoCheckUpdate\":{\"subConf\":{\"checkBeta\":false},\"value\":false}}' }",
+    "persist": [
+        "History",
+        "Data",
+        "Config"
+    ],
+    "checkver": {
+        "url": "https://api.viewdepth.cn/app_info?app_id=pixpin&update_type=0&sys=win&ver=1.8.2.0",
+        "jsonpath": "$.ver_info.version"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://down.pixpin.cn/PixPin_win_$version.zip"
+            }
+        }
+    }
+}
