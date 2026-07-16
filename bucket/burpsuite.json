@@ -1,19 +1,25 @@
 {
-    "version": "2026.6",
+    "version": "2026.4.3",
     "description": "Web security testing toolkit",
     "homepage": "https://portswigger.net/burp/communitydownload",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.6&type=WindowsX64#/dl.exe",
-            "hash": "9f40d9fd7e844973014ad3184cb7b1963b53b9a0da0ef4b7d09695d3b861b126"
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.4.3&type=WindowsX64#/dl.exe",
+            "hash": "81da742afcfa00abf35327c71d57a6d7308fa7264d0250e787cc6652f9fbc92f"
         }
     },
     "installer": {
-        "args": [
-            "-q",
-            "-d",
-            "\"$dir\""
+        "script": [
+            "$varfile = \"$dir\\installer.varfile\"",
+            "@'",
+            "sys.fileAssociation.extensions$StringArray=",
+            "sys.fileAssociation.launchers$StringArray=",
+            "sys.programGroupDisabled$Boolean=true",
+            "'@ | Set-Content -LiteralPath $varfile -NoNewline",
+            "& \"$dir\\dl.exe\" -q -d \"$dir\" -varfile $varfile",
+            "Remove-Item -LiteralPath $varfile",
+            "Remove-Item -LiteralPath \"$dir\\dl.exe\""
         ]
     },
     "uninstaller": {
@@ -22,14 +28,13 @@
     },
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
-        "jp": "$.ResultSet.Results.[?(@.buildCategory == 'desktop')].version"
+        "jsonpath": "$.ResultSet.Results.[?(@.buildCategory == 'desktop' && @.releaseChannels[0] == 'Stable' && @.builds[?(@.BuildCategoryPlatform == 'WindowsX64')])].version"
     },
     "autoupdate": {
         "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=$version&type=WindowsX64#/dl.exe",
         "hash": {
-            "mode": "json",
             "url": "https://portswigger.net/burp/releases/data",
-            "jp": "$.ResultSet.Results.[?(@.buildCategory == 'desktop')].builds.[?(@.BuildCategoryPlatform == 'WindowsX64')].Sha256Checksum"
+            "jsonpath": "$.ResultSet.Results.[?(@.version == '$version' && @.buildCategory == 'desktop' && @.releaseChannels[0] == 'Stable' && @.builds[?(@.BuildCategoryPlatform == 'WindowsX64')])].builds.[?(@.BuildCategoryPlatform == 'WindowsX64')].Sha256Checksum"
         }
     }
 }
