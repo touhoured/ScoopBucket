@@ -1,12 +1,12 @@
 {
-    "version": "2026.4.3",
+    "version": "2026.6",
     "description": "Web security testing toolkit",
     "homepage": "https://portswigger.net/burp/communitydownload",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.4.3&type=WindowsX64#/dl.exe",
-            "hash": "81da742afcfa00abf35327c71d57a6d7308fa7264d0250e787cc6652f9fbc92f"
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.6&type=WindowsX64#/dl.exe",
+            "hash": "9f40d9fd7e844973014ad3184cb7b1963b53b9a0da0ef4b7d09695d3b861b126"
         }
     },
     "installer": {
@@ -16,15 +16,20 @@
             "sys.fileAssociation.extensions$StringArray=",
             "sys.fileAssociation.launchers$StringArray=",
             "sys.programGroupDisabled$Boolean=true",
-            "'@ | Set-Content -LiteralPath $varfile -NoNewline",
-            "& \"$dir\\dl.exe\" -q -d \"$dir\" -varfile $varfile",
-            "Remove-Item -LiteralPath $varfile",
-            "Remove-Item -LiteralPath \"$dir\\dl.exe\""
+            "'@ | Set-Content $varfile",
+            "$escaped_dir = $dir.Replace('\\', '\\\\')",
+            "Add-Content $varfile \"sys.installationDir=$escaped_dir\"",
+            "Invoke-ExternalCommand \"$dir\\$fname\" -ArgumentList @('-q', '-console', '-overwrite', '-varfile', \"$varfile\")",
+            "Remove-Item \"$varfile\"",
+            "for ($i=1; $i -le 5; $i++) { Remove-Item \"$dir\\$fname\" -ErrorAction SilentlyContinue; if ($?) { break } else { Start-Sleep -Seconds 1 } }"
         ]
     },
     "uninstaller": {
         "file": "uninstall.exe",
-        "args": "-q"
+        "args": [
+            "-q",
+            "-console"
+        ]
     },
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
