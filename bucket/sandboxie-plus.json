@@ -29,7 +29,6 @@
         ]
     ],
     "persist": [
-        "Sandbox",
         "Sandboxie.ini",
         "Sandboxie-Plus.ini"
     ],
