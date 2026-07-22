@@ -1,12 +1,12 @@
 {
-    "version": "0.2.102",
+    "version": "0.3.0",
     "description": "Since Geph5 only the non-CLI Client (gephgui-wry.exe) is available, so this is my personal build.",
     "homepage": "https://github.com/touhoured/geph5-autobuild",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.2.102/geph5-client-x86_64-pc-windows-msvc-v0.2.102.zip",
-            "hash": "e4445932b764e3a770593dc3382519382cdb75ce8cdeef36a1b954c13e62d4a6",
+            "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.3.0/geph5-client-x86_64-pc-windows-msvc-v0.3.0.zip",
+            "hash": "8120c4257adcc1fb0560efd980cd51e5e0ff9e379493257aa407670c07aef83b",
             "pre_install": [
                 "if (!(Test-Path \"$scoopdir\\apps\\windivert\")) {",
                 "    Copy-Item -Path \"$scoopdir\\apps\\windivert\\current\\x64\\WinDivert*\" -Destination \"$dir\"",
@@ -14,8 +14,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.2.102/geph5-client-i686-pc-windows-msvc-v0.2.102.zip",
-            "hash": "f9345547aa052756b770a676b3bc320b576d00aaac4660bc097ca056a9ab439e",
+            "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.3.0/geph5-client-i686-pc-windows-msvc-v0.3.0.zip",
+            "hash": "99a89283469a45601914d5d003d5ae282486580026d2a4ffafd5f3ef5f03facb",
             "pre_install": [
                 "if (!(Test-Path \"$scoopdir\\apps\\windivert\")) {",
                 "    Copy-Item -Path \"$scoopdir\\apps\\windivert\\current\\x86\\WinDivert*\" -Destination \"$dir\"",
