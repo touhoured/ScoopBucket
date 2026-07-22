@@ -7,20 +7,10 @@
         "64bit": {
             "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.3.0/geph5-client-x86_64-pc-windows-msvc-v0.3.0.zip",
             "hash": "8120c4257adcc1fb0560efd980cd51e5e0ff9e379493257aa407670c07aef83b",
-            "pre_install": [
-                "if (!(Test-Path \"$scoopdir\\apps\\windivert\")) {",
-                "    Copy-Item -Path \"$scoopdir\\apps\\windivert\\current\\x64\\WinDivert*\" -Destination \"$dir\"",
-                "}"
-            ]
         },
         "32bit": {
             "url": "https://github.com/touhoured/geph5-autobuild/releases/download/geph5-client-v0.3.0/geph5-client-i686-pc-windows-msvc-v0.3.0.zip",
             "hash": "99a89283469a45601914d5d003d5ae282486580026d2a4ffafd5f3ef5f03facb",
-            "pre_install": [
-                "if (!(Test-Path \"$scoopdir\\apps\\windivert\")) {",
-                "    Copy-Item -Path \"$scoopdir\\apps\\windivert\\current\\x86\\WinDivert*\" -Destination \"$dir\"",
-                "}"
-            ]
         }
     },
     "bin": "geph5-client.exe",
