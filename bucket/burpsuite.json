@@ -9,7 +9,9 @@
             "hash": "0ab3476dfd4b2fb186c12345e3bd5ed13c66eadb6b7de148e8975f5a97cb08f3"
         }
     },
-    "suggest": "openjdk",
+    "suggest": {
+        "OpenJDK": "openjdk"
+    },
     "installer": {
         "script": [
             "$varfile = \"$dir\\installer.varfile\"",
