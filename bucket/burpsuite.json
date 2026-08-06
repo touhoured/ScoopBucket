@@ -1,12 +1,12 @@
 {
-    "version": "2026.7.2",
+    "version": "2026.7.3",
     "description": "Web security testing toolkit",
     "homepage": "https://portswigger.net/burp/communitydownload",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.7.2&type=WindowsX64#/dl.exe",
-            "hash": "0ab3476dfd4b2fb186c12345e3bd5ed13c66eadb6b7de148e8975f5a97cb08f3"
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.7.3&type=WindowsX64#/dl.exe",
+            "hash": "b72f859fee1fbaa337e3f2219c54b85c1538303720a978cd1cbd82c63e34e51f"
         }
     },
     "suggest": {
