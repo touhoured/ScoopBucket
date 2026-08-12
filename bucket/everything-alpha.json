@@ -27,6 +27,13 @@
         "$reg_content = $reg_content.replace('$app_path', $app_path)",
         "Set-Content \"$dir\\install-context.reg\" $reg_content -Encoding ASCII"
     ],
+    "bin": "Everything.exe",
+    "shortcuts": [
+        [
+            "Everything.exe",
+            "Everything"
+        ]
+    ],
     "pre_uninstall": [
         "Stop-Process -Name 'everything' -Force -ErrorAction SilentlyContinue",
         "if (Get-Service -Name Everything -ErrorAction SilentlyContinue) {",
@@ -39,13 +46,6 @@
         "}",
         "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }",
         "Get-ChildItem \"$dir\\*\" -Include 'Bookmarks*.csv', 'Everything.lng', 'Everything*.db', 'Everything*.ini', 'Filters*.csv', 'Plugins*.ini', 'Run History*.csv', 'Search History*.csv' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
-    ],
-    "bin": "Everything.exe",
-    "shortcuts": [
-        [
-            "Everything.exe",
-            "Everything"
-        ]
     ],
     "checkver": {
         "url": "https://www.voidtools.com/forum/viewtopic.php?f=12&t=9787",

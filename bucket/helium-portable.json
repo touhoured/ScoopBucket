@@ -26,11 +26,6 @@
         "}",
         "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\$chromeArch\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
     ],
-    "persist": [
-        "App\\chrome++.ini",
-        "Cache",
-        "Data"
-    ],
     "bin": [
         [
             "App\\chrome.exe",
@@ -42,6 +37,11 @@
             "App\\chrome.exe",
             "Helium"
         ]
+    ],
+    "persist": [
+        "App\\chrome++.ini",
+        "Cache",
+        "Data"
     ],
     "checkver": {
         "github": "https://github.com/imputnet/helium-windows"

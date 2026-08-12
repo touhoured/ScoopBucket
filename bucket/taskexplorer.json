@@ -3,11 +3,11 @@
     "description": "Task Explorer is an advanced Task Manager tool with emphasis on, not just monitoring what applications are running, but on finding out what applications are doing.",
     "homepage": "https://github.com/DavidXanatos/TaskExplorer",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/DavidXanatos/TaskExplorer/releases/download/v1.8.0/TaskExplorer-v1.8.0.exe",
-    "hash": "e40af0d5cfd43091e626eda631cbc53d4804db129b602180d05d47be137cf744",
     "suggest": {
         "Kernel Driver": "systeminformer-nightly"
     },
+    "url": "https://github.com/DavidXanatos/TaskExplorer/releases/download/v1.8.0/TaskExplorer-v1.8.0.exe",
+    "hash": "e40af0d5cfd43091e626eda631cbc53d4804db129b602180d05d47be137cf744",
     "innosetup": true,
     "pre_install": [
         "if (Test-Path \"$scoopdir\\apps\\systeminformer-nightly\") {",
@@ -24,17 +24,17 @@
         "    New-Item \"$dir\\TaskExplorer.ini\"",
         "}"
     ],
-    "pre_uninstall": [
-        "if (!(Test-Path \"$persist_dir\")) {",
-        "    New-Item \"$persist_dir\" -Type Directory | Out-Null",
-        "}",
-        "Copy-Item \"$dir\\TaskExplorer.ini\" \"$persist_dir\\TaskExplorer.ini\""
-    ],
     "shortcuts": [
         [
             "TaskExplorer.exe",
             "Task Explorer"
         ]
+    ],
+    "pre_uninstall": [
+        "if (!(Test-Path \"$persist_dir\")) {",
+        "    New-Item \"$persist_dir\" -Type Directory | Out-Null",
+        "}",
+        "Copy-Item \"$dir\\TaskExplorer.ini\" \"$persist_dir\\TaskExplorer.ini\""
     ],
     "checkver": "github",
     "autoupdate": {

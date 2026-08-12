@@ -32,11 +32,9 @@
         "}",
         "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\$chromeArch\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
     ],
-    "persist": [
-        "App\\chrome++.ini",
-        "Cache",
-        "Data"
-    ],
+    "env_set": {
+        "CHROME_EXECUTABLE": "$dir\\App\\chrome.exe"
+    },
     "bin": [
         [
             "App\\chrome.exe",
@@ -49,9 +47,11 @@
             "Google Chrome"
         ]
     ],
-    "env_set": {
-        "CHROME_EXECUTABLE": "$dir\\App\\chrome.exe"
-    },
+    "persist": [
+        "App\\chrome++.ini",
+        "Cache",
+        "Data"
+    ],
     "checkver": {
         "script": [
             "$AppID = '{8A69D345-D564-463C-AFF1-A69D9E530F96}'",

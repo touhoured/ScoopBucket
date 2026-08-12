@@ -3,14 +3,14 @@
     "description": "Web security testing toolkit",
     "homepage": "https://portswigger.net/burp/communitydownload",
     "license": "Freeware",
+    "suggest": {
+        "OpenJDK": "openjdk"
+    },
     "architecture": {
         "64bit": {
             "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.7.3&type=WindowsX64#/dl.exe",
             "hash": "b72f859fee1fbaa337e3f2219c54b85c1538303720a978cd1cbd82c63e34e51f"
         }
-    },
-    "suggest": {
-        "OpenJDK": "openjdk"
     },
     "installer": {
         "script": [
@@ -33,6 +33,12 @@
             "for ($i=1; $i -le 5; $i++) { Remove-Item \"$dir\\$fname\" -ErrorAction SilentlyContinue; if ($?) { break } else { Start-Sleep -Seconds 1 } }"
         ]
     },
+    "shortcuts": [
+        [
+            "burpsuite.exe",
+            "Burp Suite"
+        ]
+    ],
     "uninstaller": {
         "file": "uninstall.exe",
         "args": [
@@ -40,12 +46,6 @@
             "-console"
         ]
     },
-    "shortcuts": [
-        [
-            "burpsuite.exe",
-            "Burp Suite"
-        ]
-    ],
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
         "jsonpath": "$.ResultSet.Results.[?(@.buildCategory == 'desktop' && @.releaseChannels[0] == 'Stable' && @.builds[?(@.BuildCategoryPlatform == 'WindowsX64')])].version"

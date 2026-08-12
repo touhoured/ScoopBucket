@@ -28,10 +28,6 @@
             "sandboxie-start"
         ]
     ],
-    "persist": [
-        "Sandboxie.ini",
-        "Sandboxie-Plus.ini"
-    ],
     "shortcuts": [
         [
             "SandMan.exe",
@@ -52,6 +48,10 @@
             "Run Web browser sandboxed",
             "default_browser"
         ]
+    ],
+    "persist": [
+        "Sandboxie.ini",
+        "Sandboxie-Plus.ini"
     ],
     "checkver": {
         "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases",

@@ -10,13 +10,13 @@
         }
     },
     "extract_dir": "PixPin",
+    "post_install": "if (!(Test-Path \"$dir\\Config\\config.json\")) { Set-Content -Encoding ASCII -Path \"$dir\\Config\\config.json\" -Value '{\"System.Update.AutoCheckUpdate\":{\"subConf\":{\"checkBeta\":true},\"value\":false}}' }",
     "shortcuts": [
         [
             "PixPin.exe",
             "PixPin"
         ]
     ],
-    "post_install": "if (!(Test-Path \"$dir\\Config\\config.json\")) { Set-Content -Encoding ASCII -Path \"$dir\\Config\\config.json\" -Value '{\"System.Update.AutoCheckUpdate\":{\"subConf\":{\"checkBeta\":true},\"value\":false}}' }",
     "persist": [
         "History",
         "Data",
