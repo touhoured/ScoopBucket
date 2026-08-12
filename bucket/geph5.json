@@ -26,7 +26,9 @@
         "gephgui-wry.exe"
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/geph-official/gephgui-pkg/releases"
+        "github": "https://api.github.com/repos/geph-official/gephgui-pkg/releases",
+        "jsonpath": "$[*].tag_name",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://github.com/geph-official/gephgui-pkg/releases/download/v$version/geph-windows-$version.exe"
