@@ -32,19 +32,10 @@
         "}",
         "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\$chromeArch\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
     ],
-    "env_set": {
-        "CHROME_EXECUTABLE": "$dir\\App\\chrome.exe"
-    },
-    "bin": [
-        [
-            "App\\chrome.exe",
-            "chrome"
-        ]
-    ],
     "shortcuts": [
         [
             "App\\chrome.exe",
-            "Google Chrome"
+            "Chrome Portable"
         ]
     ],
     "persist": [
