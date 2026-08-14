@@ -6,7 +6,7 @@
     "notes": [
         "It seems Tailscale binds to the system ID,",
         "so using -statedir to change the directory is pointless.",
-        "Manually start the daemon using tailscaled.exe"
+        "Manually start the daemon using tailscaled.exe, or tailscaled.exe install-system-daemon"
     ],
     "architecture": {
         "64bit": {
