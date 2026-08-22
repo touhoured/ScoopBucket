@@ -7,8 +7,6 @@
         "url": "https://learn.microsoft.com/en-us/legal/windows-sdk/windbg-preview---software-license-terms"
     },
     "notes": "At least Windows 10 build 17763 is required to use WinDbg.",
-    "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/1-2606-22001-0/windbg.msixbundle#/dl.7z",
-    "hash": "12e63fb884347567bdd35f67f7aad61b26a08f8404553dad6951a10776f7d771",
     "architecture": {
         "64bit": {
             "pre_install": "Get-ChildItem \"$dir\" -Exclude '*x64.msix' | Remove-Item -Force -Recurse"
@@ -20,6 +18,8 @@
             "pre_install": "Get-ChildItem \"$dir\" -Exclude '*arm64.msix' | Remove-Item -Force -Recurse"
         }
     },
+    "url": "https://windbg.download.prss.microsoft.com/dbazure/prod/1-2606-22001-0/windbg.msixbundle#/dl.7z",
+    "hash": "12e63fb884347567bdd35f67f7aad61b26a08f8404553dad6951a10776f7d771",
     "installer": {
         "script": "Get-ChildItem \"$dir\" '*.msix' | Select-Object -ExpandProperty Fullname | Expand-7zipArchive -DestinationPath \"$dir\" -Removal"
     },
