@@ -21,6 +21,14 @@
         }
     },
     "innosetup": true,
+    "pre_uninstall": [
+        "# Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieSvc') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieDrv') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieSvc') -Wait -Verb RunAs",
+        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieDrv') -Wait -Verb RunAs"
+    ],
     "bin": [
         "SandMan.exe",
         [
