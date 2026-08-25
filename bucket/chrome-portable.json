@@ -21,12 +21,12 @@
             "hash": "46befb7b88e8c9edbe764d3d15cce7fda97dbd08c620f874083332a1f1b6a1bc"
         }
     },
-    "extract_dir": "Chrome-bin",
     "pre_install": [
-        "New-Item -ItemType Directory -Path \"$dir\\App\" -Force | Out-Null",
-        "Move-Item -Path \"$dir\\*\" -Destination \"$dir\\App\\\" -Exclude App -ErrorAction SilentlyContinue",
+        "Rename-Item \"$dir\\Chrome-bin\" App",
+        "ensure \"$persist\\Data\"",
+        "ensure \"$persist\\Cache\"",
         "$ChromePlusDir = (scoop prefix chrome-plus).Trim()",
-        "Copy-Item -Path \"$ChromePlusDir\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$ChromePlusDir\\App\\*\" -Destination \"$dir\\App\\\" -Recurse"
     ],
     "shortcuts": [
         [
