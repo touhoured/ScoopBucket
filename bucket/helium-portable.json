@@ -19,7 +19,8 @@
     "pre_install": [
         "New-Item -ItemType Directory -Path \"$dir\\App\" -Force | Out-Null",
         "Move-Item -Path \"$dir\\*\" -Destination \"$dir\\App\\\" -ErrorAction SilentlyContinue",
-        "Copy-Item -Path \"$scoopdir\\apps\\chrome-plus\\current\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
+        "$ChromePlusDir = (scoop prefix chrome-plus).Trim()",
+        "Copy-Item -Path \"$ChromePlusDir\\*\" -Destination \"$dir\" -Recurse -ErrorAction SilentlyContinue"
     ],
     "bin": [
         [
