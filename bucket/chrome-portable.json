@@ -23,14 +23,15 @@
     },
     "extract_dir": "Chrome-bin",
     "pre_install": [
-        "ensure \"$persist\\Data\"",
+        "ensure \"$persist\\cache\"",
+        "ensure \"$persist\\data\"",
         "Copy-Item -Path \"$(scoop prefix chrome-plus)\\*\" -Destination \"$dir\" -Recurse"
     ],
     "shortcuts": [
         [
             "chrome.exe",
             "Chrome Portable",
-            "--user-data-dir=\"$persist_dir\\data\""
+            "--user-data-dir=\"$persist_dir\\data\" --disk-cache-dir=\"$persist_dir\\cache\""
         ]
     ],
     "persist": "chrome++.ini",
