@@ -21,6 +21,14 @@
         }
     },
     "innosetup": true,
+    "pre_install": [
+        "ensure $persist_dir",
+        "if (Test-Path \"$persist_dir\\Sandboxie-Plus.ini\") {",
+        "    Copy-Item \"$persist_dir\\Sandboxie-Plus.ini\" \"$dir\\Sandboxie-Plus.ini\"",
+        "} else {",
+        "    New-Item \"$dir\\Sandboxie-Plus.ini\"",
+        "}"
+    ],
     "bin": [
         "SandMan.exe",
         [
@@ -49,11 +57,10 @@
             "default_browser"
         ]
     ],
-    "persist": [
-        "Sandboxie.ini",
-        "Sandboxie-Plus.ini"
-    ],
+    "persist": "Sandboxie.ini",
     "pre_uninstall": [
+        "ensure $persist_dir",
+        "Copy-Item \"$dir\\Sandboxie-Plus.ini\" \"$persist_dir\\Sandboxie-Plus.ini\"",
         "# Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
         "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
         "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieSvc') -Wait -Verb RunAs",
