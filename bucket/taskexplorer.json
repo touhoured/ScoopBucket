@@ -18,6 +18,7 @@
         "        Copy-Item -Path \"$scoopdir\\apps\\systeminformer-nightly\\current\\ksidyn.*\" -Destination \"$dir\\ARM64\\\" -Force",
         "    }",
         "}",
+        "ensure $persist_dir",
         "if (Test-Path \"$persist_dir\\TaskExplorer.ini\") {",
         "    Copy-Item \"$persist_dir\\TaskExplorer.ini\" \"$dir\\TaskExplorer.ini\"",
         "} else {",
