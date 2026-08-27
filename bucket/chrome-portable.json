@@ -27,6 +27,13 @@
         "ensure \"$persist\\data\"",
         "Copy-Item -Path \"$(scoop prefix chrome-plus)\\*\" -Destination \"$dir\" -Recurse"
     ],
+    "bin": [
+        [
+            "chrome.exe",
+            "chrome-portable",
+            "--user-data-dir=\"$persist_dir\\data\" --disk-cache-dir=\"$persist_dir\\cache\""
+        ]
+    ],
     "shortcuts": [
         [
             "chrome.exe",
