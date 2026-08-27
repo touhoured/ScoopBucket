@@ -32,9 +32,7 @@
         ]
     ],
     "pre_uninstall": [
-        "if (!(Test-Path \"$persist_dir\")) {",
-        "    New-Item \"$persist_dir\" -Type Directory | Out-Null",
-        "}",
+        "ensure $persist_dir",
         "Copy-Item \"$dir\\TaskExplorer.ini\" \"$persist_dir\\TaskExplorer.ini\""
     ],
     "checkver": "github",
