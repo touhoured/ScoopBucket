@@ -23,6 +23,7 @@
         "",
         "foreach ($src in @(",
         "    \"$(scoop prefix googlechrome)\\*\\WidevineCdm\"",
+        "    \"$(scoop prefix chrome-portable)\\*\\WidevineCdm\"",
         "    \"$(scoop prefix webview2)\\WidevineCdm\"",
         "    \"$env:ProgramFiles\\Microsoft\\Edge\\Application\\*\\WidevineCdm\"",
         "    \"$env:ProgramFiles\\Microsoft\\EdgeWebView\\Application\\*\\WidevineCdm\"",
