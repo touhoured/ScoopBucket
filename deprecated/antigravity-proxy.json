@@ -31,8 +31,8 @@
         }
     },
     "pre_install": [
-        "Copy-Item -Path \"$scoopdir\\apps\\antigravity-minhook\\current\\config.json\" -Destination \"$dir\"",
-        "Copy-Item -Path \"$scoopdir\\apps\\antigravity-minhook\\current\\version.dll\" -Destination \"$dir\""
+        "Copy-Item -Path \"$(scoop prefix antigravity-minhook)\\config.json\" -Destination \"$dir\"",
+        "Copy-Item -Path \"$(scoop prefix antigravity-minhook)\\version.dll\" -Destination \"$dir\""
     ],
     "installer": {
         "script": [
