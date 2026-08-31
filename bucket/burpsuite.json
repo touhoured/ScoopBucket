@@ -3,9 +3,6 @@
     "description": "Web security testing toolkit",
     "homepage": "https://portswigger.net/burp/communitydownload",
     "license": "Freeware",
-    "suggest": {
-        "OpenJDK": "openjdk"
-    },
     "architecture": {
         "64bit": {
             "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.7.3&type=WindowsX64#/dl.exe",
@@ -24,12 +21,6 @@
             "Add-Content $varfile \"sys.installationDir=$escaped_dir\"",
             "Invoke-ExternalCommand \"$dir\\$fname\" -ArgumentList @('-q', '-console', '-overwrite', '-varfile', \"$varfile\")",
             "Remove-Item \"$varfile\"",
-            "if (Get-Command java -ErrorAction SilentlyContinue) {",
-            "    & java -version *> $null",
-            "    if ($LASTEXITCODE -eq 0) {",
-            "        Remove-Item \"$dir\\jre\" -Recurse -Force -ErrorAction SilentlyContinue",
-            "    }",
-            "}",
             "for ($i=1; $i -le 5; $i++) { Remove-Item \"$dir\\$fname\" -ErrorAction SilentlyContinue; if ($?) { break } else { Start-Sleep -Seconds 1 } }"
         ]
     },
