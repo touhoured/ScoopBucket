@@ -9,6 +9,7 @@
             "hash": "d075574999e664d687a697994c44653427148545bd6d8cfc5ac6166f30a753cb"
         }
     },
+    "post_install": "ensure $persist_dir",
     "shortcuts": [
         [
             "VRCX.exe",

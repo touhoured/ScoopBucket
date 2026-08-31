@@ -10,7 +10,7 @@
             "extract_dir": "go-musicfox_5.1.0_windows_amd64"
         }
     },
-    "pre_install": "ensure $persist_dir",
+    "post_install": "ensure $persist_dir",
     "env_set": {
         "MUSICFOX_ROOT": "$persist_dir\\data"
     },
