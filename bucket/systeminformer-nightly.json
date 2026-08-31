@@ -18,10 +18,9 @@
         }
     },
     "pre_install": [
-        "ensure $persist_dir",
         "'SystemInformer.exe.settings.json', 'peview.exe.settings.json', 'usernotesdb.json' | ForEach-Object {",
         "    if (Test-Path \"$persist_dir\\$_\") {",
-        "        Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue'",
+        "        Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\"",
         "    } else {",
         "        New-Item \"$dir\\$_\" -Value \"{}\" | Out-Null",
         "    }",
@@ -39,7 +38,10 @@
     ],
     "persist": "scan.db",
     "pre_uninstall": [
-        "Copy-Item \"$dir\\SystemInformer.exe.settings.json\" \"$persist_dir\\SystemInformer.exe.settings.json\""
+        "ensure $persist_dir",
+        "'SystemInformer.exe.settings.json', 'peview.exe.settings.json', 'usernotesdb.json' | ForEach-Object {",
+        "    Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\"",
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/winsiderss/si-builds"

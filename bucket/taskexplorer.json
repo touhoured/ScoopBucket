@@ -18,7 +18,6 @@
         "        Copy-Item -Path \"$(scoop prefix systeminformer-nightly)\\ksidyn.*\" -Destination \"$dir\\ARM64\\\" -Force",
         "    }",
         "}",
-        "ensure $persist_dir",
         "if (Test-Path \"$persist_dir\\TaskExplorer.ini\") {",
         "    Copy-Item \"$persist_dir\\TaskExplorer.ini\" \"$dir\\TaskExplorer.ini\"",
         "} else {",
@@ -32,6 +31,7 @@
         ]
     ],
     "pre_uninstall": [
+        "ensure $persist_dir",
         "Copy-Item \"$dir\\TaskExplorer.ini\" \"$persist_dir\\TaskExplorer.ini\""
     ],
     "checkver": "github",
