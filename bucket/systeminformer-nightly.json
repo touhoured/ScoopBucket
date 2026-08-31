@@ -1,0 +1,60 @@
+{
+    "version": "4.0.26241.138",
+    "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
+    "homepage": "https://systeminformer.sourceforge.io",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/winsiderss/si-builds/releases/download/4.0.26241.138/systeminformer-build-win32-bin.zip",
+            "hash": "4f6604901454b5cec5549c9a8b7f2cd057f8cd776446b0534de8ca2fff4741b0"
+        },
+        "64bit": {
+            "url": "https://github.com/winsiderss/si-builds/releases/download/4.0.26241.138/systeminformer-build-win64-bin.zip",
+            "hash": "954399971e799a9d15d929440d01903aba7d156d75662a1f984eee0e1b012c8f"
+        },
+        "arm64": {
+            "url": "https://github.com/winsiderss/si-builds/releases/download/4.0.26241.138/systeminformer-build-arm64-bin.zip",
+            "hash": "72c67c3b692c653caaabc376e165e41807bcdade424158d51417e393c3a609bd"
+        }
+    },
+    "pre_install": [
+        "ensure $persist_dir",
+        "'SystemInformer.exe.settings.json', 'peview.exe.settings.json', 'usernotesdb.json' | ForEach-Object {",
+        "    if (Test-Path \"$persist_dir\\$_\") {",
+        "        Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue'",
+        "    } else {",
+        "        New-Item \"$dir\\$_\" -Value \"{}\" | Out-Null",
+        "    }",
+        "}",
+        "if (-not (Test-Path \"$persist_dir\\scan.db\")) {",
+        "    New-Item \"$dir\\scan.db\" | Out-Null",
+        "}"
+    ],
+    "bin": "peview.exe",
+    "shortcuts": [
+        [
+            "SystemInformer.exe",
+            "System Informer"
+        ]
+    ],
+    "persist": "scan.db",
+    "pre_uninstall": [
+        "Copy-Item \"$dir\\SystemInformer.exe.settings.json\" \"$persist_dir\\SystemInformer.exe.settings.json\""
+    ],
+    "checkver": {
+        "github": "https://github.com/winsiderss/si-builds"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-build-win32-bin.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-build-win64-bin.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-build-arm64-bin.zip"
+            }
+        }
+    }
+}
