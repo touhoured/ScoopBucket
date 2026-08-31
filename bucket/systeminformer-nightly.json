@@ -34,6 +34,10 @@
         [
             "SystemInformer.exe",
             "System Informer"
+        ],
+        [
+            "peview.exe",
+            "PE Viewer"
         ]
     ],
     "persist": "scan.db",
