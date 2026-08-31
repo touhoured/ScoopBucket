@@ -46,7 +46,7 @@
         "$content = Get-Content -Path $yaml | Foreach-Object {",
         "    if ($_.StartsWith('url')) { \"$($_.Replace('url', '# url')) # Disabled by Scoop\" } else { $_ }",
         "}",
-        "Set-Content $yaml -Value $content -Encoding ascii"
+        "Set-Content $yaml -Value $content"
     ],
     "shortcuts": [
         [

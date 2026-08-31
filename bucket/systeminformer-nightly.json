@@ -22,7 +22,7 @@
         "    if (Test-Path \"$persist_dir\\$_\") {",
         "        Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\"",
         "    } else {",
-        "        New-Item \"$dir\\$_\" -Value \"{}\" | Out-Null",
+        "        Set-Content \"$dir\\$_\" -Value \"{}\" | Out-Null",
         "    }",
         "}",
         "if (-not (Test-Path \"$persist_dir\\scan.db\")) {",
