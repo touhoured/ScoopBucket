@@ -1,0 +1,60 @@
+{
+    "version": "1.6.3",
+    "description": "NoteBook FanControl (NBFC) is a cross-platform fan control service for notebooks with a powerful configuration system.",
+    "homepage": "https://github.com/hirschmann/nbfc",
+    "license": "GPL-3.0-only",
+    "notes": [
+        "Requires administrator rights. The installer installs a kernel driver and a Windows service (NbfcService) system-wide.",
+        "Installs to 'C:\\Program Files\\NoteBook FanControl' and adds that directory to the system PATH."
+    ],
+    "url": "https://github.com/hirschmann/nbfc/releases/download/1.6.3/NoteBookFanControl.1.6.3.setup.exe",
+    "hash": "5A42531F3A051DBD9664B1FF41A6CDBFBB34BC71A91DB719B8FE94829594EBAA",
+    "installer": {
+        "args": [
+            "/quiet",
+            "/norestart"
+        ]
+    },
+    "bin": [
+        [
+            "C:\\Program Files\\NoteBook FanControl\\nbfc.exe",
+            "nbfc"
+        ],
+        [
+            "C:\\Program Files\\NoteBook FanControl\\ec-probe.exe",
+            "ec-probe"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "C:\\Program Files\\NoteBook FanControl\\NoteBookFanControl.exe",
+            "NoteBook FanControl"
+        ],
+        [
+            "C:\\Program Files\\NoteBook FanControl\\ConfigEditor.exe",
+            "NoteBook FanControl Config Editor"
+        ]
+    ],
+    "uninstaller": {
+        "script": [
+            "$entries = @(Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*' -ErrorAction SilentlyContinue)",
+            "$entries += @(Get-ItemProperty 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*' -ErrorAction SilentlyContinue)",
+            "$entry = $entries | Where-Object { $_.DisplayName -like 'NoteBook FanControl*' -and $_.UninstallString -notlike 'msiexec*' } | Select-Object -First 1",
+            "if ($entry) {",
+            "    $cmd = if ($entry.QuietUninstallString) { $entry.QuietUninstallString } else { $entry.UninstallString }",
+            "    if ($cmd) {",
+            "        $file = $null",
+            "        $args = @()",
+            "        if ($cmd -match '\"([^\"]+)\"(.*)') { $file = $Matches[1]; $args = ($Matches[2].Trim() -split '\\s+') | Where-Object { $_ } }",
+            "        else { $file = ($cmd -split ' ')[0] }",
+            "        if ($args.Count -eq 0) { $args = @('/quiet', '/uninstall', '/norestart') }",
+            "        if (Test-Path -LiteralPath $file) { Start-Process -FilePath $file -ArgumentList $args -Wait }",
+            "    }",
+            "}"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/hirschmann/nbfc/releases/download/$version/NoteBookFanControl.$version.setup.exe"
+    }
+}
