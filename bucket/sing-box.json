@@ -1,0 +1,45 @@
+{
+    "version": "1.14.0",
+    "description": "The universal proxy platform.",
+    "homepage": "https://sing-box.sagernet.org/",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/sing-box-1.14.0-windows-amd64.zip",
+            "hash": "3ffb56267da14e287be48bd10cf7e6505260125bad940b75101fbb4d5d58e5d6",
+            "extract_dir": "sing-box-1.14.0-windows-amd64"
+        },
+        "32bit": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/sing-box-1.14.0-windows-386.zip",
+            "hash": "4029547987ecd23efc551d65ea086714a2191415175201782c427048cc8615c6",
+            "extract_dir": "sing-box-1.14.0-windows-386"
+        },
+        "arm64": {
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/sing-box-1.14.0-windows-arm64.zip",
+            "hash": "f58dff882b2feb022da8de41943804b38681ecab5e1f490f23602fc37e9d5dd4",
+            "extract_dir": "sing-box-1.14.0-windows-arm64"
+        }
+    },
+    "bin": "sing-box.exe",
+    "checkver": {
+        "github": "https://api.github.com/repos/SagerNet/sing-box/releases",
+        "jp": "$[*].tag_name",
+        "regex": "v([\\w.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/sing-box-$version-windows-amd64.zip",
+                "extract_dir": "sing-box-$version-windows-amd64"
+            },
+            "32bit": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/sing-box-$version-windows-386.zip",
+                "extract_dir": "sing-box-$version-windows-386"
+            },
+            "arm64": {
+                "url": "https://github.com/SagerNet/sing-box/releases/download/v$version/sing-box-$version-windows-arm64.zip",
+                "extract_dir": "sing-box-$version-windows-arm64"
+            }
+        }
+    }
+}
