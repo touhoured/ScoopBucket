@@ -22,11 +22,8 @@
     },
     "innosetup": true,
     "pre_install": [
-        "ensure $persist_dir",
         "if (Test-Path \"$persist_dir\\Sandboxie-Plus.ini\") {",
         "    Copy-Item \"$persist_dir\\Sandboxie-Plus.ini\" \"$dir\\Sandboxie-Plus.ini\"",
-        "} else {",
-        "    New-Item \"$dir\\Sandboxie-Plus.ini\"",
         "}"
     ],
     "bin": [
@@ -61,12 +58,19 @@
     "pre_uninstall": [
         "ensure $persist_dir",
         "Copy-Item \"$dir\\Sandboxie-Plus.ini\" \"$persist_dir\\Sandboxie-Plus.ini\"",
-        "# Stop-Process -Name 'SandMan' -Force -ErrorAction SilentlyContinue",
-        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
-        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieSvc') -Wait -Verb RunAs",
-        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', 'SbieDrv') -Wait -Verb RunAs",
-        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieSvc') -Wait -Verb RunAs",
-        "Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', 'SbieDrv') -Wait -Verb RunAs"
+        "$services = Get-Service -Name 'SbieSvc','SbieDrv' -ErrorAction SilentlyContinue",
+        "if ($services) {",
+        "    $running = $services | Where-Object { $_.Status -eq 'Running' }",
+        "    if ($running) {",
+        "        Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList 'scandll_silent' -Wait -Verb RunAs",
+        "        foreach ($service in $running) {",
+        "            Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('stop', $service.Name) -Wait -Verb RunAs",
+        "        }",
+        "    }",
+        "    foreach ($service in $services) {",
+        "        Start-Process \"$dir\\KmdUtil.exe\" -ArgumentList @('delete', $service.Name) -Wait -Verb RunAs",
+        "    }",
+        "}"
     ],
     "checkver": {
         "github": "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases",
