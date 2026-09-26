@@ -1,5 +1,5 @@
 {
-    "version": "1.27.0",
+    "version": "1.27.1",
     "description": "酷安跨平台桌面版 - Unofficial Coolapk desktop client built with Tauri.",
     "homepage": "https://github.com/daimiaopeng/coolapk-desktop",
     "license": "MIT",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/daimiaopeng/coolapk-desktop/releases/download/v1.27.0/coolapk-desktop_1.27.0_x64-portable.exe#/coolapk-desktop.exe",
-            "hash": "eca5eabf87e814221b345eb5b240d0de035dfccb577f09be7178964d2581199d"
+            "url": "https://github.com/daimiaopeng/coolapk-desktop/releases/download/v1.27.1/coolapk-desktop_1.27.1_x64-portable.exe#/coolapk-desktop.exe",
+            "hash": "c36e029b86d677bfdb4f3d7433213f0e14012e7b83f7c57f639576180dfa44f1"
         },
         "arm64": {
-            "url": "https://github.com/daimiaopeng/coolapk-desktop/releases/download/v1.27.0/coolapk-desktop_1.27.0_arm64-portable.exe#/coolapk-desktop.exe",
-            "hash": "ca0dc349cbf6b8c2b61de63f9985691d0b4bef31ec9a32157d632f296c5c19ca"
+            "url": "https://github.com/daimiaopeng/coolapk-desktop/releases/download/v1.27.1/coolapk-desktop_1.27.1_arm64-portable.exe#/coolapk-desktop.exe",
+            "hash": "bdb2920c8e7963d7d870301c35e06298613c9505f9f8226266fa0681f96c7db3"
         }
     },
     "shortcuts": [
