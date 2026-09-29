@@ -1,12 +1,12 @@
 {
-    "version": "2.0.13",
+    "version": "2.0.16",
     "description": "An open-source desktop client for Windows and macOS, built on DeepSeek Harness.",
     "homepage": "https://dshdesktop.cn",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.13/DSH-Desktop-2.0.13-x64-Setup.exe#/dl.7z",
-            "hash": "3aa0c75b891470d1621f5589574530c7509b68d854859b059164fbfb7cd93490"
+            "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.16/DSH-Desktop-2.0.16-x64-Setup.exe#/dl.7z",
+            "hash": "0d330450cbaa9e1b5ac0420e35ff4db6afd82d73f4bcc3a9c3e421ef4fe6fa2c"
         }
     },
     "pre_install": [
