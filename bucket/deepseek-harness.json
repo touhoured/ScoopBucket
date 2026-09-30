@@ -1,6 +1,6 @@
 {
     "version": "0.2.0-rc.2",
-    "description": "DeepSeek Harness desktop application with a bundled DSH runtime and external plugins.",
+    "description": "DeepSeek Harness: Everything is a Plugin.",
     "homepage": "https://www.deepseek.com/harness/",
     "license": "MIT",
     "architecture": {
