@@ -1,16 +1,16 @@
 {
-    "version": "2.9.8",
+    "version": "3.0.1",
     "description": "Windows Subsystem for Linux",
     "homepage": "https://github.com/microsoft/WSL",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.9.8/wsl.2.9.8.0.x64.msi#/setup.msi_",
-            "hash": "a910efe7e384508abefb4fb5dad1b51d9f3d57d7a5fbac30f3f4327820739804"
+            "url": "https://github.com/microsoft/WSL/releases/download/3.0.1/wsl.3.0.1.0.x64.msi#/setup.msi_",
+            "hash": "28b1a0d013640a2ac95898ea705fa186e5b4ff767a1c1b49257161bc106599c6"
         },
         "arm64": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.9.8/wsl.2.9.8.0.arm64.msi#/setup.msi_",
-            "hash": "2d236ed05c74f87886f5444edd5a912cc5f8242ed0a5a07b7720be5302e68173"
+            "url": "https://github.com/microsoft/WSL/releases/download/3.0.1/wsl.3.0.1.0.arm64.msi#/setup.msi_",
+            "hash": "857ddbb335ec7d05ffa71d0fd2203750c0e8fc29bb164f8a95db92bd7bba4263"
         }
     },
     "installer": {
@@ -18,7 +18,7 @@
     },
     "checkver": {
         "github": "https://api.github.com/repos/microsoft/WSL/releases",
-        "jsonpath": "$[?(@.prerelease == true)].tag_name"
+        "jsonpath": "$[*].tag_name"
     },
     "autoupdate": {
         "architecture": {
