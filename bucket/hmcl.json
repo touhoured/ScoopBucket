@@ -1,10 +1,10 @@
 {
-    "version": "3.16.4",
+    "version": "3.17.0.359",
     "description": "Unofficial Minecraft Launcher which is multi-functional, cross-platform and popular",
     "homepage": "https://github.com/HMCL-dev/HMCL",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/HMCL-dev/HMCL/releases/download/v3.16.4/HMCL-3.16.4.jar#/hmcl.jar",
-    "hash": "98f0123f38e86a606aa583f74d21ae74128679e921ea7ec0c43ab26303767e9e",
+    "url": "https://github.com/HMCL-dev/HMCL/releases/download/v3.17.0.359/HMCL-3.17.0.359.jar#/hmcl.jar",
+    "hash": "39744b3c38dfec162f8392c700df9a67a9c255480835e600b9c6c783ccb6818f",
     "pre_install": [
         "@(",
         "   '@echo off'",
