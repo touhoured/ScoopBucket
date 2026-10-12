@@ -1,0 +1,30 @@
+{
+    "version": "8.0.1",
+    "description": "Choose which browser opens each link on Windows and macOS. Ask every time, or let a rule decide by site, profile or the app the link came from. Open source, local, no telemetry.",
+    "homepage": "https://github.com/rgdevment/LinkUnbound",
+    "license": "GPL-3.0-or-later",
+    "suggest": {
+        "Microsoft Edge WebView2": "extras/webview2"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rgdevment/LinkUnbound/releases/download/v2.5.0/linkunbound-installer-2.5.0-windows-x86_64.exe#/dl.7z",
+            "hash": "436306e806e25ffbabda052ee36a846db231ae4cfe96e9a095095cc33bfce346"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninstall.exe\" -Recurse",
+    "shortcuts": [
+        [
+            "linkunbound-settings.exe",
+            "LinkUnbound"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/rgdevment/LinkUnbound/releases/download/v$version/linkunbound-installer-$version-windows-x86_64.exe#/dl.7z"
+            }
+        }
+    }
+}
