@@ -1,0 +1,35 @@
+{
+    "version": "8.0.1",
+    "description": "Choose the browser on the click of a link",
+    "homepage": "https://github.com/U-C-S/Hurl",
+    "license": "MTI",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/U-C-S/Hurl/releases/download/v0.10.0/Hurl_Installer.exe",
+            "hash": "5290fbc11f2b7eef32e23d69c32ba0193af5a7f1f91a8050fddc456d5dd903e8"
+        }
+    },
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "hurl.exe",
+            "Hurl"
+        ],
+        [
+            "hurl.exe",
+            "Hurl Settings",
+            "--settings"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/U-C-S/Hurl",
+        "jsonpath": "$[*].tag_name"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/U-C-S/Hurl/releases/download/v$version/Hurl_Installer.exe"
+            }
+        }
+    }
+}
