@@ -10,6 +10,7 @@
         }
     },
     "innosetup": true,
+    "bin": "hurl",
     "shortcuts": [
         [
             "hurl.exe",
