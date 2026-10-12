@@ -16,6 +16,7 @@
             "AnWave"
         ]
     ],
+    "extract_dir": "AnWave",
     "persist": [
         "drivers",
         "drivers2",
