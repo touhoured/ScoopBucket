@@ -1,0 +1,28 @@
+{
+    "version": "3.1.10",
+    "description": "A fast, configurable browser picker for Linux and macOS with a plugin system for URL processing",
+    "homepage": "https://github.com/Strobotti/linkquisition",
+    "license": "MTI",
+    "notes": "To set Linkquisition as default browser / HTTP handler, run 'linkquisition set-default' or use the option in its graphical interface.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Strobotti/linkquisition/releases/download/v3.1.10/Linkquisition_Windows_amd64.zip",
+            "hash": "b5f66423b7f7f416eb100802b81594ec7c46b411d0184fa62c6124e0adb6bc90"
+        }
+    },
+    "bin": "linkquisition.exe",
+    "shortcuts": [
+        [
+            "linkquisition.exe",
+            "Linkquisition"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Strobotti/linkquisition/releases/download/v$version/Linkquisition_Windows_amd64.zip"
+            }
+        }
+    }
+}
