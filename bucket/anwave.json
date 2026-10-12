@@ -9,6 +9,7 @@
             "hash": "9cc8ee83b67a5eea74c01ae2278f305b12f24961df084aef0f998794dbc8aa66"
         }
     },
+    "extract_dir": "AnWave",
     "pre_install": "Move-Item -Path \"$dir\\AnWave-2024-$version-Windows-x64.exe\" -Destination \"$dir\\AnWave.exe\"",
     "shortcuts": [
         [
@@ -16,7 +17,6 @@
             "AnWave"
         ]
     ],
-    "extract_dir": "AnWave",
     "persist": [
         "drivers",
         "drivers2",
