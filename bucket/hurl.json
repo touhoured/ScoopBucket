@@ -22,10 +22,7 @@
             "--settings"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/U-C-S/Hurl",
-        "jsonpath": "$[*].tag_name"
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
