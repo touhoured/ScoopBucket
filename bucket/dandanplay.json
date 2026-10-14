@@ -33,7 +33,7 @@
         "Log"
     ],
     "checkver": {
-        "url": "https://github.com/kaedei/dandanplay",
+        "url": "https://api.github.com/repos/kaedei/dandanplay/releases",
         "regex": "windows-([\\d.]+)"
     },
     "autoupdate": {
