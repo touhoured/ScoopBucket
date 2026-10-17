@@ -17,22 +17,6 @@
         [
             "wpsoffice.exe",
             "WPS Office"
-        ],
-        [
-            "wps.exe",
-            "WPS World"
-        ],
-        [
-            "et.exe",
-            "WPS Excel"
-        ],
-        [
-            "wpp.exe",
-            "WPS PPT"
-        ],
-        [
-            "ksomisc.exe",
-            "WPS configtool"
         ]
     ],
     "checkver": {
