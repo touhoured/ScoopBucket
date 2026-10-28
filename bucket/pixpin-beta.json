@@ -1,12 +1,12 @@
 {
-    "version": "3.6.5.1",
+    "version": "3.6.6.0",
     "description": "A powerful and easy-to-use screenshot and pinning tool to help you improve efficiency",
     "homepage": "https://pixpinapp.com/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://download.pixpinapp.com/PixPin_win_3.6.5.1.zip",
-            "hash": "6de08a50c0e761e692589199647c5b1bf06ee31c8119bdb6bd103d6cc456600b"
+            "url": "https://download.pixpinapp.com/PixPin_win_3.6.6.0.zip",
+            "hash": "cc49fbdd8e8d2cd98aeba5e749f2f9828517ecd06d201ca5ce1d4e2efd9ecc8e"
         }
     },
     "extract_dir": "PixPin",
