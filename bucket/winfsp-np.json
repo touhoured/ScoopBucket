@@ -6,10 +6,20 @@
     "url": "https://github.com/winfsp/winfsp/releases/download/v2.2B5/winfsp-2.2.26286.msi#/setup.msi_",
     "hash": "293ffb9bcc0b625c85079fe85fa77f8fe98170aba51a02ac9c83d58f6c3b0e2f",
     "installer": {
-        "script": "Invoke-ExternalCommand msiexec -RunAs -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn')"
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+            "$succ = Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", 'ADDLOCAL=F.Developer', '/qn')",
+            "if(-not $succ) { break }"
+        ]
     },
     "uninstaller": {
-        "script": "Invoke-ExternalCommand msiexec -RunAs -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn')"
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+            "$svc = Get-Service -Name 'WinFsp.Launcher' -ErrorAction SilentlyContinue",
+            "if (-not $svc -or $svc.Status -ne 'Running') { warn 'WinFsp.Launcher service is not running, skipping uninstall.'; break }",
+            "$succ = Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn')",
+            "if(-not $succ) { break }"
+        ]
     },
     "checkver": {
         "github": "https://api.github.com/repos/winfsp/winfsp/releases",
