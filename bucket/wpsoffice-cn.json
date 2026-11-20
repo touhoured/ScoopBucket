@@ -7,7 +7,6 @@
     "hash": "e3a12702ba1196654c6454d2881abbe903ef71019d0342127845d76a12f8c120",
     "pre_install": [
         "Move-Item \"$dir\\`$_11_\\`$EXEFILE\" \"$dir\"",
-        "Remove-Item \"$dir\\*\" -Exclude `$EXEFILE -Recurse",
         "Expand-7zipArchive \"$dir\\`$EXEFILE\" -Switches '-t#'",
         "Remove-Item \"$dir\\*\" -Exclude 4.7z, 6.7z -Recurse",
         "Expand-7zipArchive \"$dir\\4.7z\" -Removal",
