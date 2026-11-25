@@ -1,0 +1,51 @@
+{
+    "version": "2026.11.2",
+    "description": "Web security testing toolkit",
+    "homepage": "https://portswigger.net/burp/communitydownload",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=2026.11.2&type=WindowsX64#/dl.exe",
+            "hash": "d3fc8cf99521353038bb7f3783688ee570d243dfbc80bfc7be4e55c0d1a94874"
+        }
+    },
+    "installer": {
+        "script": [
+            "$varfile = \"$dir\\installer.varfile\"",
+            "@'",
+            "sys.fileAssociation.extensions$StringArray=",
+            "sys.fileAssociation.launchers$StringArray=",
+            "sys.programGroupDisabled$Boolean=true",
+            "'@ | Set-Content $varfile",
+            "$escaped_dir = $dir.Replace('\\', '\\\\')",
+            "Add-Content $varfile \"sys.installationDir=$escaped_dir\"",
+            "Invoke-ExternalCommand \"$dir\\$fname\" -ArgumentList @('-q', '-console', '-overwrite', '-varfile', \"$varfile\")",
+            "Remove-Item \"$varfile\"",
+            "for ($i=1; $i -le 5; $i++) { Remove-Item \"$dir\\$fname\" -ErrorAction SilentlyContinue; if ($?) { break } else { Start-Sleep -Seconds 1 } }"
+        ]
+    },
+    "shortcuts": [
+        [
+            "burpsuite.exe",
+            "Burp Suite"
+        ]
+    ],
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": [
+            "-q",
+            "-console"
+        ]
+    },
+    "checkver": {
+        "url": "https://portswigger.net/burp/releases/data",
+        "jsonpath": "$.ResultSet.Results.[?(@.buildCategory == 'desktop' && @.releaseChannels[0] == 'Stable' && @.builds[?(@.BuildCategoryPlatform == 'WindowsX64')])].version"
+    },
+    "autoupdate": {
+        "url": "https://portswigger-cdn.net/burp/releases/download?product=desktop&version=$version&type=WindowsX64#/dl.exe",
+        "hash": {
+            "url": "https://portswigger.net/burp/releases/data",
+            "jsonpath": "$.ResultSet.Results.[?(@.version == '$version' && @.buildCategory == 'desktop' && @.releaseChannels[0] == 'Stable' && @.builds[?(@.BuildCategoryPlatform == 'WindowsX64')])].builds.[?(@.BuildCategoryPlatform == 'WindowsX64')].Sha256Checksum"
+        }
+    }
+}
