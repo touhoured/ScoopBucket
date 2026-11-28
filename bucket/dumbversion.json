@@ -1,5 +1,5 @@
 {
-    "version": "1",
+    "version": "1.2.2",
     "description": "The smart way to make diffs between massive files",
     "homepage": "https://github.com/thecatontheceiling/DumbVersion",
     "license": "GPL-3.0-or-later",
